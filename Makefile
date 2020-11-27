@@ -1,8 +1,9 @@
 run-app:
-	docker-compose up github-rails-client
+	docker-compose up github-issues-api
 
 run-build:
 	docker-compose build
 
-run-tests: 
-	docker-compose exec github-rails-client rspec
+run-tests:
+	docker-compose run github-issues-api rspec
+

@@ -13,5 +13,4 @@ services:
       - "3000"
     environment:
       - PORT=3000
-      - RAILS_ENV=development
-      - GITHUB_API_URL=https://developer.github.com/v3
+      - GITHUB_API_URL=https://api.github.com

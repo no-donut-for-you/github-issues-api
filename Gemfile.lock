@@ -184,7 +184,7 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.4.1)
+    zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
@@ -207,7 +207,7 @@ DEPENDENCIES
   webmock
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.6.0p0
 
 BUNDLED WITH
-   2.1.4
+   1.17.3
