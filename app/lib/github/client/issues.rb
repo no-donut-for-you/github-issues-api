@@ -20,6 +20,8 @@ module Github
       # options option [String] :state (open ) Indicates the state of the issues to return. Can be either open, closed, or all.
       # options option [String] :assignee Can be the name of a user. Pass in none for issues with no assigned user, and * for issues assigned to any user.
       # options option [String] :labels List of comma separated Label names. Example: actionCable, actionMailer.
+      # options option [Integer] :page List of comma separated Label names. Example: actionCable, actionMailer.
+      # options option [Integer] :per_page List of comma separated Label names. Example: actionCable, actionMailer.
       #
       # example List issues for a repository
       # options = {
@@ -28,7 +30,9 @@ module Github
       #     direction: 'desc',
       #     state: 'open',
       #     assignee: 'none',
-      #     labels: 'activerecord'
+      #     labels: 'activerecord',
+      #     page: 1, 
+      #     per_page: 100
       #   }
       #
       #   issues = client.issues('rails', 'rails', options)

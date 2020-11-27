@@ -31,7 +31,9 @@ RSpec.describe Github::Client::Issues, type: :lib do
           direction: 'desc',
           state: 'open',
           assignee: 'none',
-          labels: 'activerecord'
+          labels: 'activerecord',
+          page: 1, 
+          per_page: 100
         }
       end
       let(:url) { "#{base_url}/repos/#{username}/#{repository}/issues?#{options.to_query}" }

@@ -26,7 +26,9 @@ RSpec.describe '/api/v1/issues', type: :request do
           direction: 'desc',
           state: 'open',
           assignee: 'none',
-          labels: 'activerecord'
+          labels: 'activerecord',
+          page: 1, 
+          per_page: 100
         }
       end
       let(:body) { JSON.parse(response.body) }
