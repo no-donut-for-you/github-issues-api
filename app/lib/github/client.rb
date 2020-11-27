@@ -9,6 +9,8 @@ module Github
 
     def client
       @client ||= Faraday.new(ENV['GITHUB_API_URL']) do |c|
+        c.headers['Authorization'] = "token #{ENV['GITHUB_AUTH_TOKEN']}"
+
         c.adapter Faraday.default_adapter
         c.request :json
         c.response :json
