@@ -3,8 +3,10 @@
 module Api
   module V1
     class IssuesController < ApplicationController
-      # GET /api/v1/issues/:repository
-      # GET example: /api/v1/issues/rails/rails
+      # Get issues from a repository endpoint
+      # example List issues for a repository
+      #
+      # GET api/v1/issues/rails/rails?assignee=none&direction=desc
       def index
         client = Github::Client.new
         issues = client.issues(params[:username], params[:repository], filter_options)

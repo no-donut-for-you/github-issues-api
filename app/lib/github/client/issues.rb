@@ -10,13 +10,28 @@ module Github
     module Issues
       # List issues from a repository
       #
-      # @param repo [String] A GitHub repository name.
-      # @option options [String] :labels List of comma separated Label names. Example: <tt>ActionCable, ActionMailer</tt>.
-      # @option options [String] :sort (created) Sort: <tt>created</tt>, <tt>updated</tt>, or <tt>comments</tt>.
-      # @option options [String] :direction (desc) Direction: <tt>asc</tt> or <tt>desc</tt>.
-      # @option options [Integer] :page (1) Page number.
-      # @example List issues for a repository
-      #   issues = client.issues('rails/rails')
+      # it returns a Faraday Response
+      #
+      # param username [String] A GitHub username.
+      # param repository [String] A GitHub repository name.
+      # options option [String] :sort (created) sort: created, updated, or comments.
+      # options option [String] :since This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
+      # options option [String] :direction (desc) Direction: asc or desc.
+      # options option [String] :state (open ) Indicates the state of the issues to return. Can be either open, closed, or all.
+      # options option [String] :assignee Can be the name of a user. Pass in none for issues with no assigned user, and * for issues assigned to any user.
+      # options option [String] :labels List of comma separated Label names. Example: actionCable, actionMailer.
+      #
+      # example List issues for a repository
+      # options = {
+      #     sort: 'comments',
+      #     since: '2020-11-24T14:01:58+00:00',
+      #     direction: 'desc',
+      #     state: 'open',
+      #     assignee: 'none',
+      #     labels: 'activerecord'
+      #   }
+      #
+      #   issues = client.issues('rails', 'rails', options)
       def list_issues(username, repository, options = {})
         url = "/repos/#{username}/#{repository}/issues"
         url = "#{url}?#{options.to_query}" unless options.empty?

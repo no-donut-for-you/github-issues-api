@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module Github
+  # Client for the GitHub API
+  #
+  # see https://developer.github.com/v3
   class Client
     include Github::Client::Issues
 
