@@ -1,9 +1,9 @@
 version: '3.8'
 services:
-  github-rails-client:
-    image: design-pickle/github-rails-client
+  github-issues-api:
+    image: design-pickle/github-issues-api
     build: .
-    container_name: github-rails-client
+    container_name: github-issues-api
     command: rails s -b 0.0.0.0
     volumes:
       - .:/app
