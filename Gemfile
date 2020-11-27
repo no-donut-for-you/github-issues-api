@@ -9,10 +9,14 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'faraday', '>=1.1.0'
+gem 'faraday_middleware', '>=1.0.0'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'pry', '~> 0.13.1'
+  gem 'figaro'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'pry'
 end
 
 group :development do
