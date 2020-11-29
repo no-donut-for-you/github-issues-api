@@ -10,6 +10,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'faraday', '>=1.1.0'
 gem 'faraday_middleware', '>=1.0.0'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'rspec-rails'
