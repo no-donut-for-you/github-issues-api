@@ -37,16 +37,16 @@ RSpec.describe '/api/v1/issues', type: :request do
         get api_v1_issues_url(username, repository), as: :json
 
         expect(response).to be_successful
-        expect(body).to be_kind_of Array
+        expect(body['data']).to be_kind_of Array
       end
 
       it 'returns all filtered issues from a repository' do
         get api_v1_issues_url(username, repository, options), as: :json
 
         expect(response).to be_successful
-        expect(body).to be_kind_of Array
+        expect(body['data']).to be_kind_of Array
 
-        issue = body.first
+        issue = body['data'].first
         labels = issue['labels'].map { |label| label['name'] }
 
         expect(labels).to include 'activerecord'

@@ -13,7 +13,7 @@ module Api
         issues = client.issues(params[:username], params[:repository], filter_options)
 
         if issues.success?
-          render json: issues.body, status: :ok
+          render json: { data: issues.body }, status: :ok
         else
           render json: issues.body['message'], status: issues.status
         end
